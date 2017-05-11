@@ -5,10 +5,11 @@ void __dino_task_boundary( ... ){
 }
 
 int foo(int n,int m){
+__dino_task_boundary(&n,&m);
     unsigned int t;
     int x=0, y=0;
 
-__dino_task_boundary(&x,&y,&n,&m);
+__dino_task_boundary(&x);	//requires m,n,y for coorectness
 	while(n>m){
 		x++;
 		y = x*2;
